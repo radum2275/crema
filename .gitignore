@@ -21,3 +21,7 @@ target/
 *_ig*
 *_old.py
 
+# vscode
+.vscode/
+.vscode/launch.json
+.vscode/settings.json

@@ -14,13 +14,11 @@
 		</repository>
 	</repositories>
 
-
 	<scm>
 		<connection>scm:git:git@github.com:idsia/crema.git</connection>
 		<developerConnection>scm:git:git@github.com:idsia/crema.git</developerConnection>
 		<url>git@github.com:idsia/crema.git</url>
 	</scm>
-
 
 	<distributionManagement>
 		<repository>
@@ -47,7 +45,7 @@
                 <includes>
                     <include>**/*.*</include>
                 </includes>
-            </resource>
+			</resource>
         </resources>
         <testResources>
             <testResource>
@@ -75,6 +73,26 @@
 				<extensions>true</extensions>
 			</plugin>
 
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>3.2.0</version>
+				<executions>
+				  <execution>
+					<id>add-source</id>
+					<phase>generate-sources</phase>
+					<goals>
+					  <goal>add-source</goal>
+					</goals>
+					<configuration>
+					  <sources>
+						<source>${project.basedir}/examples</source>
+					  </sources>
+					</configuration>
+				  </execution>
+				</executions>
+			  </plugin>
+		
 			<!-- any other plugins -->
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
